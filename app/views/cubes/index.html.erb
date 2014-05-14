@@ -1,0 +1,28 @@
+<div class="container"  class="transition-enabled">
+<div class="row">
+<div class="col-sm-6">
+    <div class="ih-item circle effect2 left_to_right">
+<% @cubes.each do |cube| %>
+        <div class="img">
+            <%= link_to image_tag(cube.picture.url(:medium)), cube %>
+        </div>
+         <%= link_to image_tag(cube.picture.url(:medium)), cube %>
+        <div class="panel-body">
+        <h6>Title: <%= cube.title %></h6> 
+        <h6>Description: <%= cube.description %></h6> 
+        <h6>Genre: <%= cube.genre %></h6> 
+        <% if cube.user == current_user %>
+        <div class="container">
+        <%= link_to 'Edit', edit_cube_path(cube) %>
+        <%= link_to 'Destroy', cube, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </div>
+      </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
+<div class="center">
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>

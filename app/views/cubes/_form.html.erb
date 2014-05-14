@@ -1,0 +1,32 @@
+<%= form_for @cube, html: {multipart: true} do |f| %>
+	<% if @cube.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@cube.errors.count, 'error') %> Error:</h2>
+			<ul>
+				<% @cube.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="form-group">
+		<%= f.label :picture %>
+		<%= f.file_field :picture, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :title %>
+		<%= f.text_field :title, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :description %>
+		<%= f.text_field :description, class: "form-control" %>
+	</div>
+		<div class="form-group">
+		<%= f.label :genre %>
+		<%= f.text_field :genre, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.submit class: "btn btn-default" %>
+	</div>
+<% end %>

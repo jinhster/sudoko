@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sudoko</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $('.image-popup-vertical-fit').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        mainClass: 'mfp-img-mobile',
+        image: {
+            verticalFit: true
+        }
+        
+    });
+
+    $('.image-popup-fit-width').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        image: {
+            verticalFit: false
+        }
+    });
+
+    $('.image-popup-no-margins').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+        image: {
+            verticalFit: true
+        },
+        zoom: {
+            enabled: true,
+            duration: 300 // don't foget to change the duration also in CSS
+        }
+    });
+
+});
+</script>
+
+</head>
+<body>
+<%= render 'layouts/nav' %>
+<div class="container">
+  	<% flash.each do |f,m| %>
+  		<div class="alert <%= flashes f %>">
+  			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  			<%= m  %>
+  	<% end %>
+<%= yield %>
+</div>
+</body>
+</html>

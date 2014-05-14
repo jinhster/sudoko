@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-7">
+			<div class="panel panel-default">
+				<div class="panel-heading"><%= @cube.title %>
+				</div>
+					<div class="container">
+			<%= image_tag @cube.picture.url(:medium) %>
+	<div class="panel-body">
+	<p>
+	  <strong>Title:</strong>
+	  	<%= @cube.title %>
+	</p>
+	<p>
+	  <strong>Description:</strong>
+	  	<%= @cube.description %>
+	</p>
+
+	<p>
+	  <strong>Genre:</strong>
+	  	<%= @cube.genre %>
+	</p>
+	</div>
+	</div>
+	<%= link_to 'Back', cubes_path %>
+	<% if @cube.user == current_user %>
+	<%= link_to 'Edit', edit_cube_path(@cube) %>
+	</div>
+	</div>
+	<% end %>
+	</div>

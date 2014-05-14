@@ -1,0 +1,17 @@
+<h2>Sign in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "well"}) do |f| %>
+  
+<fieldset>
+  <legend>Sign in here</legend>
+  <%= f.input :email, placeholder: 'Enter email'%>
+  <%= f.input :password, placeholder: 'password' %>
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.input :remember_me, as: :boolean %> </div>
+  <% end %>
+  <div><%= f.button :submit, "Sign in" %></div>
+
+<% end %>
+</fieldset>
+
+<%= render "devise/shared/links" %>
