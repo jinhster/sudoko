@@ -1,6 +1,7 @@
+
 <h2>Sign in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "well"}) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "well well-lg"}) do |f| %>
   
 <fieldset>
   <legend>Sign in here</legend>
@@ -9,7 +10,7 @@
   <% if devise_mapping.rememberable? -%>
     <div><%= f.input :remember_me, as: :boolean %> </div>
   <% end %>
-  <div><%= f.button :submit, "Sign in" %></div>
+  <div><%= f.button :submit, "Sign in", class: "btn btn-primary" %></div>
 
 <% end %>
 </fieldset>

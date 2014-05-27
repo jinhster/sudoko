@@ -1,12 +1,12 @@
 <div class="container"  class="transition-enabled">
 <div class="row">
-<div class="col-sm-6">
-    <div class="ih-item circle effect2 left_to_right">
-<% @cubes.each do |cube| %>
-        <div class="img">
-            <%= link_to image_tag(cube.picture.url(:medium)), cube %>
-        </div>
+<div class="col-sm-4 col-md-2">
+    <div class="thumbnail">
+    <% @cubes.each do |cube| %>
          <%= link_to image_tag(cube.picture.url(:medium)), cube %>
+         <hr/>
+
+      <div class="caption">
         <div class="panel-body">
         <h6>Title: <%= cube.title %></h6> 
         <h6>Description: <%= cube.description %></h6> 

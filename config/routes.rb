@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   resources :cubes
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   devise_for :users
   root to: 'static_pages#index'
   get 'about', to: 'static_pages#about'
   get 'help', to: 'static_pages#help'
+  resources :relationships, only: [:create,:destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

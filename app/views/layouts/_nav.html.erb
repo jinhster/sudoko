@@ -1,8 +1,9 @@
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner">
 <div class="container">
-	<div class="page-header">
-		<div class="navbar navbar-default">
-			<ul class="nav navbar-nav">
-				<li><%= link_to "Home", root_path %></li>
+<div class="navbar-header">
+				<%= link_to "Home", root_path, class:"navbar-brand" %>
+				<ul class="nav navbar-nav navbar-right">
 				<li><%= link_to "Cube", cubes_path %></li>
 				<li><%= link_to "Help", help_path %></li>
 				<li><%= link_to "About", about_path %></li>
@@ -10,10 +11,11 @@
 				<li><%= link_to raw('<span class="glyphicon glyphicon-plus-sign"></span> New Cube'), new_cube_path %></li>
 				<li><%= link_to "logout", destroy_user_session_path, method: :delete, class:"btn btn-default" %></li>
 				<% else %>
-				<li><%= link_to "Sign up", new_user_registration_path, class:"btn btn-default" %>
-				<li><%= link_to "Log in", new_user_session_path, class:"btn btn-default" %></li>
+				<li><%= link_to "Sign up", new_user_registration_path %>
+				<li><%= link_to "Log in", new_user_session_path %></li>
 				<% end %>
 			</ul>
-		</div>
-	</div>
+</div>
+</div>
+</div>
 </div>
