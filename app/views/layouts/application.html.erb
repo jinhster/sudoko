@@ -15,15 +15,13 @@
 <%= render 'layouts/nav' %>
 <%= render 'static_pages/about' %>
 
+
 <div class="container">
   	<% flash.each do |f,m| %>
   		<div class="alert <%= flashes f %>">
   			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
   			<%= m  %>
   	<% end %>
-<% if user_signed_in? %>
-<%= render 'static_pages/follower' %>
-<% end %>
 
 <%= yield %>
 </div>

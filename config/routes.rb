@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :cubes
-  resources :users do
+  resources :devise do
     member do
       get :following, :followers
     end

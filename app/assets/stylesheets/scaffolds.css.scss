@@ -1,0 +1,32 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css");
+html,body {
+  height:100%;
+}
+
+.jumbotron h1 {
+  color: #eeddff
+}
+
+.index {
+	color:#eeddff;
+}
+
+.v-center {
+  margin-top:8%;
+}
+
+.container-mod {
+  margin: 0;
+  width: 100%;
+  min-height:100%;
+  overflow:hidden;
+  background-color:#221133;
+  color:#eeeeee;
+
+}
+
+.container-mod a {
+  color: #eeddff;
+  text-decoration:none;
+}
+

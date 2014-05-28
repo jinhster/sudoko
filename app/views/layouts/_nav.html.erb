@@ -4,12 +4,12 @@
 <div class="navbar-header">
 				<%= link_to "Home", root_path, class:"navbar-brand" %>
 				<ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Cube", cubes_path %></li>
+				<li><%= link_to "Image Gallery", cubes_path %></li>
 				<li><%= link_to "Help", help_path %></li>
 				<li><%= link_to "About", about_path %></li>
 				<% if user_signed_in? %>
-				<li><%= link_to raw('<span class="glyphicon glyphicon-plus-sign"></span> New Cube'), new_cube_path %></li>
-				<li><%= link_to "logout", destroy_user_session_path, method: :delete, class:"btn btn-default" %></li>
+				<li><%= link_to new_cube_path do %> <span class="glyphicon glyphicon-plus-sign"> New Cube </span><% end %></li>
+				<li><%= link_to "logout", destroy_user_session_path, method: :delete%></li>
 				<% else %>
 				<li><%= link_to "Sign up", new_user_registration_path %>
 				<li><%= link_to "Log in", new_user_session_path %></li>
