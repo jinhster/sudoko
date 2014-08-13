@@ -1,14 +1,14 @@
 <div class="container"  class="transition-enabled">
 <div class="row">
-<div class="col-sm-4 col-md-2">
+<div class="col-sm-6 col-md-3">
     <div class="thumbnail">
-    <%= User.name %>
     <% @cubes.each do |cube| %>
          <%= link_to image_tag(cube.picture.url(:medium)), cube %>
          <hr/>
 
-<div class="container">
+<div class="container-fluid">
         <div class="panel-body">
+
         <h6>Title: <%= cube.title %></h6> 
         <h6>Description: <%= cube.description %></h6> 
         <h6>Genre: <%= cube.genre %></h6> 
@@ -19,11 +19,9 @@
         <% end %>
         </div>
       </div>
-      <br/>
-<% end %>
-
 </div>
-<br/>
+</div>
+<% end %>
 </div>
 </div>
 </div>
